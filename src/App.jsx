@@ -50,7 +50,7 @@ function App() {
         </div>
         <h3 className="balance">
           Balance for address {inputValue}:{" "}
-          {accountBalance ? `${accountBalance} eth` : "Enter address"}
+          {accountBalance ? `${accountBalance} eth` : ""}
         </h3>
       </div>
 
