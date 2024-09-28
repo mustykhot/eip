@@ -1,0 +1,31 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh !important;
+}
+.cover_balance {
+}
+.d-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  border: 1px solid blue;
+  padding: 10px;
+  width: 300px;
+}
+button {
+  background: green !important;
+  color: white !important;
+  padding: 10px !important;
+  display: block !important;
+  width: 230px !important;
+  margin-top: 10px !important;
+}
+
+.coverconnect {
+  margin-top: 100px;
+}

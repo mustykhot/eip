@@ -38,22 +38,23 @@ function App() {
 
   return (
     <div>
-      <div>
-        <input
-          type="text"
-          placeholder="Input address"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-        />
-        <button onClick={getBalanceFnc}>Get Balance</button>
-
-        <h3>
+      <div className="cover_balance">
+        <div className="d-flex">
+          <input
+            type="text"
+            placeholder="Input address"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+          />
+          <button onClick={getBalanceFnc}>Get Balance</button>
+        </div>
+        <h3 className="balance">
           Balance for address {inputValue}:{" "}
           {accountBalance ? `${accountBalance} eth` : "Enter address"}
         </h3>
       </div>
 
-      <div>
+      <div className="coverconnect">
         {!isConnected ? (
           <button onClick={getAccount} className="enableEthereumButton">
             Connect
