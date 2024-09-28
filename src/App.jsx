@@ -17,12 +17,14 @@ function App() {
 
   const getBalanceFnc = async () => {
     if (inputValue) {
+      console.log(inputValue, "inputValue");
       const provider = window.ethereum;
       try {
         const fetchedBalance = await provider.request({
           method: "eth_getBalance",
           params: [inputValue, "latest"],
         });
+        console.log(fetchedBalance, "fetchedBalance");
 
         const formattedBalance = Number(fetchedBalance) / 1e18;
         setAccountBalance(formattedBalance);
@@ -49,8 +51,7 @@ function App() {
           <button onClick={getBalanceFnc}>Get Balance</button>
         </div>
         <h3 className="balance">
-          Balance for address {inputValue}:{" "}
-          {accountBalance ? `${accountBalance} eth` : ""}
+          Balance for address {inputValue}: {accountBalance} eth
         </h3>
       </div>
 

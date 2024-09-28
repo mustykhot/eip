@@ -8,6 +8,7 @@ export const useConnectWallet = () => {
   const [isConnected, setIsConnected] = useState(false);
 
   const getAccount = async () => {
+    console.log(window.ethereum, "window.ethereum");
     try {
       const accounts = await window.ethereum.request({
         method: "eth_requestAccounts",
