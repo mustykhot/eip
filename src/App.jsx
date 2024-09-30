@@ -1,19 +1,15 @@
 import { useState } from "react";
 import "./App.css";
 import { useConnectWallet } from "./hooks/useConnectWallet";
+import useAppContext from "./context";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
   const [accountBalance, setAccountBalance] = useState("");
 
-  const {
-    account,
-    chainId,
-    isConnected,
-    error,
-    getAccount,
-    disconnectAccount,
-  } = useConnectWallet();
+  const { getAccount, disconnectAccount } = useConnectWallet();
+
+  const { account, chainId, error, isConnected } = useAppContext();
 
   const getBalanceFnc = async () => {
     if (inputValue) {

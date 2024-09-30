@@ -1,11 +1,18 @@
 import { useState, useEffect } from "react";
 import detectEthereumProvider from "@metamask/detect-provider";
+import useAppContext from "../context";
 
 export const useConnectWallet = () => {
-  const [account, setAccount] = useState(null);
-  const [chainId, setChainId] = useState(null);
-  const [error, setError] = useState("");
-  const [isConnected, setIsConnected] = useState(false);
+  const {
+    account,
+    setAccount,
+    chainId,
+    setChainId,
+    error,
+    setError,
+    isConnected,
+    setIsConnected,
+  } = useAppContext();
 
   const getAccount = async () => {
     console.log(window.ethereum, "window.ethereum");
@@ -32,7 +39,7 @@ export const useConnectWallet = () => {
 
   const handleChainChanged = (newChainId) => {
     setChainId(newChainId);
-    window.location.reload();
+    // window.location.reload();
   };
 
   const handleAccountsChanged = (accounts) => {
